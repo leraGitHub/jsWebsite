@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Память</title>
+</head>
+<body>
+
+	<style>
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.header {
+				width: 100%;
+				min-height: 40px;
+				background: #333;
+				font-family: sans-serif;
+				font-size: 2em;
+				padding-left: 30px;
+				padding-top: 5px;
+				padding-bottom: 5px;			
+				margin-bottom: 10px;
+			}
+
+		.header a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.infoBtn {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			float: right;
+			margin-right: 10px;
+			color: black;
+			background: #F4F4F4;
+			font-size: 30px;
+			font-family: sans-serif;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.info {
+			border: 1px solid black;
+			float: right;
+			color: black;
+			background: #F4F4F4;
+			display: none;
+			font-size: 0.5em;
+			width: 300px;
+			text-align: left;
+			padding: 5px;
+			margin-top: 10px;
+
+		}
+
+		.infoBtn:hover .info {
+			display: block;
+		}
+
+		.container {
+			margin-left: 10px;
+		}
+
+		table {
+			/*width: 400px;*/
+		}
+
+		.cell {
+			width: 80px;
+			height: 80px;
+			margin-left: 20px;
+			background: lightgray;
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 4em;
+			color: lightgray;
+			cursor: pointer;
+		}
+
+
+		.mini {
+			width: 10px;
+			height: 50px;
+			padding-left: 40px;
+			background: lightgray;
+		}
+
+		.minitable {
+			margin-top: 30px;
+		}
+
+		
+
+	</style>
+
+
+	<div class="header"><a href="index.html">В меню</a></div>
+
+	<button class="infoBtn">i
+	<div class="info">
+		<p>Не знаю, существует ли такая игра на самом деле или мы ее придумали, но данная программа была вдохновлена карточной игрой. Квадраты - карты, лежащие рубашкой вверх. Игрок может открыть два квадрата. Если они разные по цвету - они закрываются, если одинаковые, он может открыть еще два квадрата. Если все квадраты одинаковы по цвету, они считаются собранными. Нужно собрать все цвета.</p>
+		<p>
+			<b>Косяки:</b>
+			<br>
+			<input type="checkbox">после открытия второй карты можно успеть октрыть еще несколько, пока все карты не закроются
+			<br>
+			<input type="checkbox">В карточной игре участвуют два игрока, здесь разделения на игроков нет
+
+		</p>
+	</div>
+	</button>
+
+	<div class="container">
+		<table>
+			<tr>
+				<td class='cell' data-available='true' onclick="check(0)"></td>
+				<td class='cell' data-available='true' onclick="check(1)"></td>
+				<td class='cell' data-available='true' onclick="check(2)"></td>
+				<td class='cell' data-available='true' onclick="check(3)"></td>				
+				<td class='cell' data-available='true' onclick="check(4)"></td>
+			</tr>
+			<tr>
+				<td class='cell' data-available='true' onclick="check(5)"></td>
+				<td class='cell' data-available='true' onclick="check(6)"></td>
+				<td class='cell' data-available='true' onclick="check(7)"></td>				
+				<td class='cell' data-available='true' onclick="check(8)"></td>
+				<td class='cell' data-available='true' onclick="check(9)"></td>
+			</tr>
+			<tr>
+				<td class='cell' data-available='true' onclick="check(10)"></td>
+				<td class='cell' data-available='true' onclick="check(11)"></td>				
+				<td class='cell' data-available='true' onclick="check(12)"></td>
+				<td class='cell' data-available='true' onclick="check(13)"></td>
+				<td class='cell' data-available='true' onclick="check(14)"></td>
+			</tr>
+			<tr>
+				<td class='cell' data-available='true' onclick="check(15)"></td>				
+				<td class='cell' data-available='true' onclick="check(16)"></td>
+				<td class='cell' data-available='true' onclick="check(17)"></td>
+				<td class='cell' data-available='true' onclick="check(18)"></td>
+				<td class='cell' data-available='true' onclick="check(19)"></td>	
+			</tr>
+			<tr>
+				<td class='cell' data-available='true' onclick="check(20)"></td>
+				<td class='cell' data-available='true' onclick="check(21)"></td>
+				<td class='cell' data-available='true' onclick="check(22)"></td>
+				<td class='cell' data-available='true' onclick="check(23)"></td>
+				<td class='cell' data-available='true' onclick="check(24)"></td>
+				
+			</tr>
+			<tr>
+				<td class='cell' data-available='true' onclick="check(25)"></td>
+				<td class='cell' data-available='true' onclick="check(26)"></td>
+				<td class='cell' data-available='true' onclick="check(27)"></td>
+				<td class='cell' data-available='true' onclick="check(28)"></td>
+				<td class='cell' data-available='true' onclick="check(29)"></td>
+				
+			</tr>
+			<tr>
+				<td class='cell' data-available='true' onclick="check(30)"></td>
+				<td class='cell' data-available='true' onclick="check(31)"></td>
+				<td class='cell' data-available='true' onclick="check(32)"></td>
+				<td class='cell' data-available='true' onclick="check(33)"></td>
+				<td class='cell' data-available='true' onclick="check(34)"></td>
+				<td class='cell' data-available='true' onclick="check(35)"></td>
+				
+			</tr>
+			<tr>
+				
+			</tr>
+			
+			
+			
+		</table>
+
+		<table class='minitable'>
+			<tr>
+				<td class='mini'></td>
+				<td class='mini'></td>
+				<td class='mini'></td>
+				<td class='mini'></td>
+				<td class='mini'></td>
+				<td class='mini'></td>
+				<td class='mini'></td>
+				<td class='mini'></td>
+				<td class='mini'></td>
+			</tr>
+			
+			
+			
+		</table>
+
+	</div>
+
+	
+	
+
+
+
+	
+	
+
+
+		
+	
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="jscode/memory.js"></script>
+
+
+
+
+</body>
+</html>

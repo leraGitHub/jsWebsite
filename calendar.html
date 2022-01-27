@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Календарь</title>
+</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.header {
+				width: 100%;
+				min-height: 40px;
+				background: #333;
+				font-family: sans-serif;
+				font-size: 2em;
+				padding-left: 30px;
+				padding-top: 5px;
+				padding-bottom: 5px;			
+				margin-bottom: 10px;
+			}
+
+		.header a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.infoBtn {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			float: right;
+			margin-right: 10px;
+			color: black;
+			background: #F4F4F4;
+			font-size: 30px;
+			font-family: sans-serif;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.info {
+			border: 1px solid black;
+			float: right;
+			color: black;
+			background: #F4F4F4;
+			display: none;
+			font-size: 0.5em;
+			width: 300px;
+			text-align: left;
+			padding: 5px;
+			margin-top: 10px;
+
+		}
+
+		.infoBtn:hover .info {
+			display: block;
+		}
+
+	
+		.calendar {
+			border: 1px solid black;
+			max-width: 300px;
+			margin-left: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			position: absolute;
+		}
+
+
+		.calTop {
+			height: 30px;
+			font-size: 1.2em;
+			padding-left: 5px;
+		}
+
+		.arrows {
+			float: right;
+			margin-left: 30px;
+			margin-right: 10px;
+			cursor: pointer;
+			-webkit-user-select: none;
+		}
+
+		.weekDays {
+			background: lightgrey;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border-top: 1px solid grey;
+			border-bottom: 1px solid grey;
+		}
+
+		.weekDays span {
+			margin: 10px;
+		}
+
+		.day {
+			margin: 1px;
+			width: 40px;
+			height: 30px;
+			text-align: center;
+			float: left;
+			padding-top: 10px;
+
+		}
+
+		.full:hover {
+			background: lightgray;
+			border-radius: 50px;
+		}
+
+		.today {
+			background-color: black !important;
+			color: white !important;
+			border-radius: 50px;
+		}
+
+		.tasks {
+			width: 400px;
+			margin-left: 400px;
+			background: lightgrey;
+			border: 1px solid grey;
+			padding: 10px;
+			display: none;
+		}
+
+		#addTaskInp {
+			width: 75%;
+			height: 20px;
+		}
+
+		.dayTasks {
+			margin-top: 10px;
+			width: 100%;
+			outline: 1px solid grey;
+			padding: 3px;
+		}
+
+		.delTask {
+			float: right;
+			/*margin-right: 60px;*/
+			cursor: pointer;
+			margin-left: 5px;
+			color: black;
+			padding: 2px;
+		}
+
+		.hasTasks {
+			background: #ebe7e7;
+			border-radius: 50px;
+		}
+
+		.auxiliary {
+			/*вспомогательный*/
+		}
+
+		.allTasksDone {
+			background: lightgreen;
+		}
+
+
+		.allTasksDone:hover {
+			background: lightgreen;
+		}
+
+
+		
+		
+		
+
+		
+
+		
+
+	
+
+	</style>
+<body>
+
+
+
+		
+	<div class="header"><a href="index.html">В меню</a></div>
+
+	<button class="infoBtn">i
+		<div class="info">
+			<p>
+				Календарь-планировщик. Можно назначить дела на определенную дату, нажав на нее. Дело можно отметить выполненным, удалить, редактировать (двойным щелчком мыши). Сегодняшний день отмечается черным цветом. Дни, на которые назначены дела, обозначаются серым цветом. Дни, в которых все дела отмечены выполненными, отмечаются зеленым.
+			</p>
+			<p>
+				<b>Косяки:</b>
+				
+			</p>
+		</div>
+	</button>
+
+	<!-- ----------------------------------------------------------- -->
+
+
+	
+<div class="calendar">
+	<div class="calTop">
+		<span id="year"></span>
+		<span class="arrows">
+			<span id="previous" onclick="previous()">&#8592;</span>
+			<span id="next" onclick="next()">&#8594;</span>
+		</span>
+	</div>
+	<div class="weekDays">
+		<span>Пн</span>
+		<span>Вт</span>
+		<span>Ср</span>
+		<span>Чт</span>
+		<span>Пт</span>
+		<span>Сб</span>
+		<span>Вс</span>
+	</div>
+	<div id='monthContainer'>
+		
+		
+		
+	</div>
+	
+</div>		
+		
+
+<div class="tasks">
+	<div id="date"></div>
+	<input type="text" id="addTaskInp" placeholder="Добавить задачу">
+	<input type="button" value="Добавить" onclick="addTask()">
+
+	<div id="mainContainer">
+		<div>
+			<!--<div class='dayTasks'>
+				<div class="delTask">&#215;</div>
+				<input type="checkbox">
+				<span>Lorem ipsum dolor sit amet.</span>
+				</div> -->
+		</div>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="jscode/calendar.js"></script>
+
+
+
+
+</body>
+</html>

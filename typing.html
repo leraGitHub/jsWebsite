@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Печать</title>
+</head>
+<body>
+
+	<style>
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+
+		.word {
+			font-family: sans-serif;
+			font-size: 4em;
+			font-weight: 600;
+			min-height: 150px;
+			margin-top: 30px;
+		}
+
+		.input {
+			width: 700px;
+			height: 100px;
+			font-size: 3em;
+			border-width: 2px;
+			border-color: silver;
+		}
+
+		.header {
+			width: 100%;
+			min-height: 40px;
+			background: #333;
+			font-family: sans-serif;
+			font-size: 2em;
+			padding-left: 30px;
+			padding-top: 5px;
+			padding-bottom: 5px;			
+			margin-bottom: 10px;
+		}
+
+		.header a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.infoBtn {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			float: right;
+			margin-right: 10px;
+			color: black;
+			background: #F4F4F4;
+			font-size: 30px;
+			font-family: sans-serif;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.info {
+			border: 1px solid black;
+			float: right;
+			color: black;
+			background: #F4F4F4;
+			display: none;
+			font-size: 0.5em;
+			width: 300px;
+			text-align: left;
+			padding: 5px;
+			margin-top: 10px;
+
+		}
+
+		.infoBtn:hover .info {
+			display: block;
+		}
+
+		.container {
+			margin-left: 10px;
+		}
+
+		.timer {
+			font-size: 1.3em;
+			margin-top: 10px;	
+		}
+
+		.words {
+			font-size: 1.3em;
+			margin-top: 10px;	
+		}
+		
+		
+	</style>
+
+	<div class="header"><a href="index.html">В меню</a></div>
+
+	<button class="infoBtn">i
+	<div class="info">
+		<p>
+			Печать на скорость. За минуту нужно написать как можно больше слов
+
+
+		</p>
+		<p>
+			<b>Косяки: </b>
+			<br>
+			<input type="checkbox" checked>таймер начинает идти после активации инпута. Нужно включать таймер со второго слова. Первое всегда "старт".
+			<br>
+			<input type="checkbox" checked> Вместо счетчика слов стоит сделать счетчик знаков в минуту
+			
+		</p>
+	</div>
+	</button>
+
+	<!-- ------------------------ -->
+
+	<div class="container">
+		
+	
+		<div class="word">Старт</div>
+
+		<div class="inp">
+			<input id="idInp" type="text" class="input" onkeyup="start(this)">
+			<br>
+		</div>
+
+		<div class="timer">Время: 60</div>
+
+		<div class="words">Знаков в минуту: 0</div>
+	
+	</div>
+		
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="jscode/typing.js"></script>
+
+	
+
+
+
+
+</body>
+</html>

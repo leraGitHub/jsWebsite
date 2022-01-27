@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Крестики-нолики</title>
+</head>
+<body>
+
+	<style>
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+
+		.header {
+				width: 100%;
+				min-height: 40px;
+				background: #333;
+				font-family: sans-serif;
+				font-size: 2em;
+				padding-left: 30px;
+				padding-top: 5px;
+				padding-bottom: 5px;			
+				margin-bottom: 10px;
+			}
+
+		.header a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.cell {
+			width: 100px;
+			height: 100px;
+			margin-left: 20px;
+			background: lightgray;
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 4em;
+			color: lightgray;
+			cursor: pointer;
+			-webkit-user-select: none;
+		}
+
+		.Oturn {
+			font-size: 4em;
+			font-family: sans-serif;
+			color: silver;
+			margin-top: 5px;
+			margin-right: 215px;
+		}
+
+		.Xturn {
+			font-size: 4em;
+			font-family: sans-serif;
+			color: black;
+			margin-top: 5px;
+		}
+		
+		#btn {
+			width: 315px;
+			height: 40px;
+			font-size: 1.5em;
+		}
+
+		.container {
+			margin-left: 10px;
+		}
+
+		.infoBtn {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			float: right;
+			margin-right: 10px;
+			color: black;
+			background: #F4F4F4;
+			font-size: 30px;
+			font-family: sans-serif;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.info {
+			border: 1px solid black;
+			float: right;
+			color: black;
+			background: #F4F4F4;
+			display: none;
+			font-size: 0.5em;
+			width: 300px;
+			text-align: left;
+			padding: 5px;
+			margin-top: 10px;
+
+		}
+
+		.infoBtn:hover .info {
+			display: block;
+		}
+
+
+	</style>
+
+	<div class="header"><a href="index.html">В меню</a></div>
+
+	<button class="infoBtn">i
+		<div class="info">
+			<p>
+				Просто крестики-нолики
+			</p>
+			<p>
+				<b>Косяки:</b>
+				<br>
+				<input type="checkbox" checked>Можно выделить содержимое ячеек
+				<br>
+				<input type="checkbox" checked>Непонятно кто ходит
+				<br>
+				<input type="checkbox" checked>Можно поменять значения ячейки повторным нажатием
+				<br>
+				<input type="checkbox" checked>Игра продолжается после победы
+			</p>
+		</div>
+	</button>
+
+	<div class="container">
+		
+
+
+		<div>
+		<table>
+			<tr>
+				<td class="cell" data-is="false" OnClick="check(1);">1</td>
+				<td class="cell" data-is="false" OnClick="check(2);">2</td>
+				<td class="cell" data-is="false" OnClick="check(3);">3</td>	
+			</tr>
+			<tr>
+				<td class="cell" data-is="false" OnClick="check(4);">4</td>
+				<td class="cell" data-is="false" OnClick="check(5);">5</td>
+				<td class="cell" data-is="false" OnClick="check(6);">6</td>	
+			</tr>
+			<tr>
+				<td class="cell" data-is="false" OnClick="check(7);">7</td>
+				<td class="cell" data-is="false" OnClick="check(8);">8</td>
+				<td class="cell" data-is="false" OnClick="check(9);">9</td>	
+			</tr>
+			
+
+		</table>
+		</div>
+
+		<div>
+			<span class="Oturn">O</span>
+			<span class="Xturn">X</span>
+		</div>
+
+		<div>
+			<input type="button" value="Начать сначала" id="btn" onclick="restart()">
+		</div>
+
+	</div>
+
+	
+
+	
+
+
+	
+	
+
+	
+	
+
+
+		
+	
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="jscode/cross-zero.js"></script>
+
+
+
+
+</body>
+</html>

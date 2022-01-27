@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Главная</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<style>
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+
+		body {
+			background: #1A1A1A;
+			min-height: 1500px;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+
+
+
+		.header {
+			width: 100%;
+			height: 40px;
+			background: #000000;
+			font-family: roboto, sans-serif;
+			font-size: 2em;
+			padding-left: 30px;
+			padding-top: 5px;
+			padding-bottom: 5px;	
+			position: fixed;
+			top: 0;		
+			z-index: 2;
+			}
+
+		.header a {
+			color: white;
+			font-size: 30px;
+		}
+
+		.mainPage {
+			position: relative;
+			min-height: 712px;
+		}
+
+		.logoJS {
+			width: 45%;
+			position: absolute;
+			top: 30px;
+			z-index: 0;
+		}
+
+
+		.name {
+			position: absolute;
+			z-index: 1;
+			top: 90px;
+			left: 40%;
+			color: #FCB924;
+			font-size: 4vw;
+			font-family: roboto, sans-serif;
+		}
+
+		.introductionText {
+			width: 45%;
+			font-size: 1.4vw;
+			font-family: roboto, sans-serif;
+			font-weight: 300;
+			color: white;
+			position: absolute;
+			float: right;
+			left: 50%;
+			top: 300px;
+		}
+
+
+		.row {
+			position: relative;
+		}
+
+		.card {
+			width: 20%;
+			height: 165px;
+			float: left;
+			padding-top: 139px;
+			color: white;
+			font-family: roboto, sans-serif;
+			font-size: 1.7vw;
+			font-weight: 300;
+			text-align: center;
+
+		}
+
+
+		.card1 {
+			background: #000000;
+		}
+
+		.card2 {
+			background: #1A1A1A;
+		}
+
+
+		.card:hover {
+			background: #282828;
+			/*background: white;*/
+			color: white;
+			cursor: pointer;
+			transition: all 0.4s ease;
+		}
+
+		.cardText {
+			margin-top: 137px;
+		}
+
+
+		
+
+	</style>
+
+
+		
+	<div class="header"><a href="practice.html">Практика</a></div>
+
+	<div class="container">
+
+		<div class="mainPage">
+			<h1 class="name">JavaScript: практика<br> и прокты</h1>
+			<img src="img/js7.jpg" alt="" class="logoJS">
+			<p class="introductionText">
+				В этом документе находятся мои мини-проекты, написанные на JavaScript. Верхнее меню с надписью «практика» ведет на страницу, где я (о боги как неожиданно) практикуюсь. Пишу простые программы на закрепление, которые не жалко удалить. Возможно, там есть какая-то программа прямо сейчас, а может и нет. Основные программы находятся снизу. Собственно, страницы с проектами выглядят не очень красиво (а эту я сделала чисто для портфолио). У каждого проекта есть информация, которую можно прочитать, наведя на квадратик в правом верхнем углу страницы. Там же написаны косяки, которые возможно когда-нибудь будут исправлены (или уже исправлены).
+			</p>
+		</div>
+
+
+		<div class="row">
+			<a href="anagram.html"><div class="card"><span class="cardText">Анаграмма</span></div></a>
+			<a href="shulte.html"><div class="card ">Таблицы Шульте</div></a>
+			<a href="cross-zero.html"><div class="card">Креcтики-нолики</div></a>
+			<a href="typing.html"><div class="card">Печать текста</div></a>
+			<a href="memory.html"><div class="card">Игра</div></a>
+			<a href="foreignLang.html"><div class="card">Изучение слов</div></a>
+			<a href="calendar.html"><div class="card">Календарь</div></a>
+			<a href="pixel.html"><div class="card">Пиксель арт</div></a>
+			<a href="down.html"><div class="card">Пруфы шо ты даун</div></a>
+			<a href="accords.html"><div class="card">Аккорды</div></a>
+
+			
+
+
+			
+		</div>
+		
+	</div>
+
+
+
+
+
+	
+	
+
+
+		
+	
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="jscode/index.js"></script>
+
+
+
+
+</body>
+</html>

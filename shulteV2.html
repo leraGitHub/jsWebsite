@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Таблицы Шульте</title>
+</head>
+<body>
+
+	<style>
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+
+		.cell {
+			width: 60px;
+			height: 60px;
+			margin-left: 20px;
+			background: lightgray;
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 2em;
+			color: #333;
+			cursor: pointer;
+		}
+
+		.link {
+			color: #333;
+			text-decoration: none;			
+		}
+		
+		.shulte {
+			width: 320px;
+			padding: 6px;
+			margin-left: 2px; 
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 2em;			
+			margin-top: 5px;
+		}
+
+		.container {
+			float: left;
+			margin-left: 10px;
+		}
+
+		.timer {
+			font-size: 1.5em;	
+			float: left;
+			margin-left: 20px;
+			margin-top: 20px; 
+		}
+
+		.header {
+			width: 100%;
+			min-height: 40px;
+			background: #333;
+			font-family: sans-serif;
+			font-size: 2em;
+			padding-left: 30px;
+			padding-top: 5px;
+			padding-bottom: 5px;			
+			margin-bottom: 10px;
+		}
+
+		.header a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.infoBtn {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			float: right;
+			margin-right: 10px;
+			color: black;
+			background: #F4F4F4;
+			font-size: 30px;
+			font-family: sans-serif;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.info {
+			border: 1px solid black;
+			float: right;
+			color: black;
+			background: #F4F4F4;
+			display: none;
+			font-size: 0.5em;
+			width: 300px;
+			text-align: left;
+			padding: 5px;
+			margin-top: 10px;
+
+		}
+
+		.infoBtn:hover .info {
+			display: block;
+		}
+
+
+
+	</style>
+
+	<div class="header"><a href="index.html">В меню</a></div>
+	<button class="infoBtn">i
+	<div class="info">
+		<p>
+			Таблица Шульте - таблица 5х5 квадратов с цифрами. Задача - за наименьшее количество времени нажать по очереди на все цифры от 1 до 25. У данной программы две версии. Вторая лучше
+		</p>
+	</div>
+	</button>
+
+
+	<div class="container">
+		<table>
+			<tr>
+				<td class="cell" onmousedown="check(1);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(2);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(3);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(4);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(5);" onmouseup="grey(this)"></td>				
+			</tr>
+			<tr>
+				<td class="cell" onmousedown="check(6);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(7);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(8);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(9);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(10);" onmouseup="grey(this)"></td>				
+			</tr>
+			<tr>
+				<td class="cell" onmousedown="check(11);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(12);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(13);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(14);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(15);" onmouseup="grey(this)"></td>				
+			</tr>
+			<tr>
+				<td class="cell" onmousedown="check(16);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(17);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(18);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(19);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(20);" onmouseup="grey(this)"></td>				
+			</tr>
+			<tr>
+				<td class="cell" onmousedown="check(21);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(22);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(23);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(24);" onmouseup="grey(this)"></td>
+				<td class="cell" onmousedown="check(25);" onmouseup="grey(this)"></td>				
+			</tr>
+			
+			
+			
+
+		</table>
+
+
+	</div>
+		<div class="timer" id="timer">00:00</div>
+
+
+	<div class="shulte"><a href="shulte.html" class="link">Первая версия</a></div>
+
+
+
+
+	
+
+
+	
+	
+
+	
+	
+
+
+		
+	
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="jscode/shulteV2.js"></script>
+
+
+
+
+</body>
+</html>

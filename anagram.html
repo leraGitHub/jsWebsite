@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Анаграмма</title>
+</head>
+<body>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.word {
+			margin: 30px;
+			font-size: 3em;
+			font-family: sans-serif;
+			font-weight: 600;
+		}
+
+		.btn {
+			margin-left: 20px;
+			font-size: 2em;
+			font-family: sans-serif;
+			font-weight: 600;
+			color: black;
+			width: 300px;
+			height: 70px;
+			outline-color: silver;
+
+		}
+
+		.btn:focus {
+			outline-color: grey;
+		}
+
+		
+
+		.check {
+			margin: 30px;
+			font-size: 2em;
+			font-family: sans-serif;
+			font-weight: 600;
+		}
+
+		.header {
+			width: 100%;
+			min-height: 40px;
+			background: #333;
+			font-family: sans-serif;
+			font-size: 2em;
+			padding-left: 30px;
+			padding-top: 5px;
+			padding-bottom: 5px;			
+			margin-bottom: 10px;
+		}
+
+		.header a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.infoBtn {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			float: right;
+			margin-right: 10px;
+			color: black;
+			background: #F4F4F4;
+			font-size: 30px;
+			font-family: sans-serif;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.info {
+			border: 1px solid black;
+			float: right;
+			color: black;
+			background: #F4F4F4;
+			display: none;
+			font-size: 0.5em;
+			width: 300px;
+			text-align: left;
+			padding: 5px;
+			margin-top: 10px;
+
+		}
+
+		.infoBtn:hover .info {
+			display: block;
+		}
+
+		
+		
+	</style>
+
+	
+	<div class="header"><a href="index.html">В меню</a></div>
+
+	<button class="infoBtn">i
+	<div class="info">
+		<p>
+			Моя первая более-менее полноценная программа! Нужно составить слово из букв на экране и вписать его в поле ответа. Если ответ правильный - поле окрасится в зеленый, нет - в красный
+		</p>
+	</div>
+	</button>
+
+
+	<!-- -------------------------------------------- -->
+	
+	<div class="word"></div>
+
+	<input type="text" class="btn" id="btn" placeholder="Ввести ответ" onchange="check()">
+
+		
+	
+
+	<div class="check"></div>
+	
+		
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="jscode/anagram.js"></script>
+
+	
+
+
+
+
+</body>
+</html>

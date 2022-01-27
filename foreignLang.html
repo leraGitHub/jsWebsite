@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Изучение слов</title>
+</head>
+<body>
+
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			
+		}
+
+
+
+		.header {
+				width: 100%;
+				min-height: 40px;
+				background: #333;
+				font-family: sans-serif;
+				font-size: 2em;
+				padding-left: 30px;
+				padding-top: 5px;
+				padding-bottom: 5px;			
+				margin-bottom: 10px;
+			}
+
+		.header a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.infoBtn {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			float: right;
+			margin-right: 10px;
+			color: black;
+			background: #F4F4F4;
+			font-size: 30px;
+			font-family: sans-serif;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.info {
+			border: 1px solid black;
+			float: right;
+			color: black;
+			background: #F4F4F4;
+			display: none;
+			font-size: 0.5em;
+			width: 300px;
+			text-align: left;
+			padding: 5px;
+			margin-top: 10px;
+
+		}
+
+		.infoBtn:hover .info {
+			display: block;
+		}
+
+		.container {
+			width: 40%;
+			float: left;
+			margin-left: 10px;
+		}
+
+		#sidebar {
+			width: 10%;
+			background: #F8F8F8;
+			border: 1px solid grey;
+			float: left;
+			text-align: center;
+			font-family: sans-serif;
+			display: none;
+			/*padding-bottom: 10px;*/
+			padding: 10px;
+			
+		}
+
+		#sidebar hr {
+			width: 70%;
+			/*align-self: center;*/
+			margin: 0 auto 0 auto;
+		}
+
+		.word {
+			width: 240px;
+			height: 40px;
+			font-size: 1.3em;
+			outline: 1px;
+			margin-top: 10px;
+		}
+	
+		.btn {
+			width: 200px;
+			height: 40px;
+			font-size: 1.3em;
+			background: silver;
+			outline: none;
+			border: none;
+			margin-top: 10px;
+		}
+
+		.btn:active {
+			background: lightgrey;
+		}
+
+		.delete {
+			font-size: 1.3em;
+			background: silver;
+			outline: none;
+			border: none;
+		}
+
+
+		#settings {
+			width: 400px;
+			min-height: 100px;
+			padding: 20px;
+			margin-top: 10px;
+			background: #F8F8F8;
+			border: 1px solid grey;
+			display: none;
+			font-size: 1em;
+			font-family: sans-serif;
+		}
+
+
+
+		#learnWords {
+			display: none;
+		}
+
+		#outputWord {
+			font-size: 1.3em;
+			font-family: sans-serif;
+		}
+
+		#rightAnswer {
+			font-size: 1.3em;
+			font-family: sans-serif;
+		}
+
+		#showCards {
+			display: none;
+		}
+
+		#reversingWords {
+			margin-left: 10px;
+			margin-top: 10px;
+			font-size: 1em;
+			font-family: sans-serif;	
+			text-align: left;
+			
+
+		}
+
+		
+
+	
+		
+
+
+
+	</style>
+
+
+		
+	<div class="header"><a href="index.html">В меню</a></div>
+
+	<button class="infoBtn">i
+	<div class="info">
+		<p>
+			Изучение иностранных слов. Сначала необходимо составить список слов и их переводов. К этому списку всегда можно вернуться и изменить/удалить любое слово. Чтобы начать изучение - нужно сохранить список и вписывать в форму перевод выпавшего слова. Можно также настроить программу - вывести весь список слов с их переводами; включить ожидание правильного ответа (слово поменяется только в случае правильного ответа); включить отображение верного ответа, если ответ неправильный; поменять местами слово и его перевод.
+		</p>
+		<p>
+			<b>Косяки: </b>
+			<br>
+			<input type="checkbox" checked> Кнопка "ответить" работает дважды
+			<br>
+			<input type="checkbox" checked> Если во время изучение оставить форму заполненной, при открытии списка изучения эта форма появляется
+		</p>
+	</div>
+	</button>
+
+	<!-- ----------------------------------------------------------- -->
+	
+	
+	<div class="container">
+		<input  type="button" value="Сохранить список" class="btn" onclick="saveCards()" id='saveCards'>
+		<input  type="button" value="Изменить список" class="btn" onclick="showCards()" id='showCards'>
+
+
+		<div id="fillCards">
+		
+			<div id="cards">
+				<div class="card">
+					<input type="text" class="word lang1" placeholder="слово">
+					<input type="text" class="word lang2" placeholder="перевод">
+					<input type="button" value="X" class='delete' onclick="delCard(this)">
+				</div>
+			</div>
+
+			<input type="button" value="Добавить слово" class="btn" onclick="addCard()">
+		</div>
+
+
+
+		<div id="learnWords">
+
+			<div style="margin-top: 40px">
+			<span id="outputWord"></span>
+			<span id="rightAnswer"></span>
+			</div>
+			<input type="text" class='word' id="inputWord" onkeypress="checkEnter(event)">
+			<br>
+			<input type="button" class='btn' onclick="check()" value="ответить">
+			<br>
+			<input type="button" class='btn' onclick="set()" value="настройки">
+
+
+			<div id="settings">
+				<div>
+					<input type="checkbox" id='showList' onclick="showListFunc()">
+					<label for="showList">Показать список слов</label>
+				</div>
+				<div>
+					<input type="checkbox" id="waitRightAnswer" onclick="waitRightAnswer()">
+					<label for="waitRightAnswer">Ждать правильного ответа</label>
+				
+				</div>
+				<div>
+					<input type="checkbox" id="showRightAnswer" onclick="showingAnswer()">
+					<label for="showRightAnswer">Показывать правильный ответ</label>
+					
+				</div>
+				<div>
+					<button id="reversingWords" onclick="reverseWords()">Поменять столбцы местами</button>
+					
+				</div>
+			</div>
+
+
+
+		</div>
+
+	</div>
+
+	<div id="sidebar">
+		<h2>Список слов:</h2>
+		<br>
+		<hr>
+		<br>
+		<div id="wordsList">
+			
+		</div>
+	</div>
+
+
+	
+	
+
+
+		
+	
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="jscode/foreignLang.js"></script>
+
+
+
+
+</body>
+</html>

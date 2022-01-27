@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Генератор аккордов</title>
+</head>
+<body>
+
+	<style>
+
+		* {
+			margin: 0;
+			/*padding: 0;*/
+		}
+
+		.header {
+			width: 100%;
+			min-height: 40px;
+			background: #333;
+			font-family: sans-serif;
+			font-size: 2em;
+			padding-left: 30px;
+			padding-top: 5px;
+			padding-bottom: 5px;			
+			margin-bottom: 10px;
+		}
+
+		.header a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.infoBtn {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			float: right;
+			margin-right: 10px;
+			color: black;
+			background: #F4F4F4;
+			font-size: 30px;
+			font-family: sans-serif;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.info {
+			border: 1px solid black;
+			float: right;
+			color: black;
+			background: #F4F4F4;
+			display: none;
+			font-size: 0.5em;
+			width: 300px;
+			text-align: left;
+			padding: 5px;
+			margin-top: 10px;
+			position: relative;
+			z-index: 1;
+
+		}
+
+		.infoBtn:hover .info {
+			display: block;
+		}
+
+		.container {
+			margin-left: 20px;
+			min-height: 1000px;
+		}
+
+
+		.accordChoice {
+			width: 20%;
+			float:  left;
+		}
+
+		.accordList {
+			width: 25%;
+			float:  left;
+			min-height: 100px;
+			position: relative;
+
+			
+
+		}
+
+
+		.accordElem {
+			width: 70px;
+			height: 70px;
+			margin-left: 10px;
+			margin-top: 10px;
+			text-align: center;
+			border: solid 1px gray;
+			float: left;
+			font-size: 1.5em;
+			line-height: 65px;
+			-webkit-user-select: none;
+
+
+		}
+
+		.btnmini {
+			margin-top: 10px;
+		}
+
+		.generateContainer {
+			width: 100%;
+			min-height: 30px;
+			/*background: gray;*/
+			/*position: absolute;*/
+			bottom: -60px;
+		}
+
+		.btnmax {
+			min-width: 30%;
+			height: 30px;
+			font-size: 1.2em;
+
+		}
+
+
+		.inpmax {
+			width: 200px;
+			height: 25px;
+			font-size: 1.2em;
+		}
+
+		.randomChainList {
+			width: 370px;
+			position: absolute;
+			margin-left: 750px;
+
+		}
+
+		.randomChainList table {
+			
+			/*border: solid 1px black;*/
+			text-align: center;
+			vertical-align: middle;
+			font-size: 1.5em;
+			border-collapse: separate;
+			border-spacing: 10px;
+		}
+
+		.randomChainList td {
+			width: 70px;
+			height: 70px;
+			border: solid 1px black;
+		}
+
+		.addition {
+			min-height: 100px;
+			width: 250px;
+			position: absolute;
+			margin-left: 1150px;
+		}
+
+		.randomFight table {
+			margin-top: 10px;
+
+		}
+
+		.randomFight table td {
+			width: 50px;
+			height: 50px;
+			outline: solid 1px black ;
+			text-align: center;
+			vertical-align: middle;
+			font-size: 1.8em;
+		}
+
+		#randOrder {
+			font-size: 1.8em;
+			font-weight: 800;
+		}
+
+
+
+		
+	</style>
+
+	
+	<div class="header"><a href="index.html">В меню</a></div>
+
+	<button class="infoBtn">i
+		<div class="info">
+			<p>
+				Программа, имеющая практические смысл. 
+			</p>
+			<p>
+				Генерация случайной последовательности аккордов. Чтобы составить последовательность, нужно сформировать список из аккордов, которые хочешь учить. Их можно выбрать, можно вписать вручную в окне "свой вариант". Затем следует нажать кнопку "составить список" и проверить. Изменить список аккордов можно составление нового списка или удалением аккорда (двойной щелчок мыши по нему). После этого нужно выставить количество аккордов в цепочке (форма над списком. По умолчанию стоит 4 аккорда в цепочке). Можно включить/выключить возможность повторения аккордов. После настройки можно нажать кнопку "сгенерировать". 
+			</p>
+			<p>
+				Генерация случайного боя. Программа была создана чтобы сделать еще что-нибудь, на самом деле она не имеет много смысла и не соответстует правилам построения гитарного боя. Но иногда получается что-то годное
+			</p>
+			<p>
+				Генерация последовательности для тренировки беглости пальцев. Формирует цепочку из цифр (по умолчанию от 1 до 4). Каждая цифра - номер лада. Нужно зажимать одну струну на ладах по порядку, соответствующему сформированной последовательности.
+			</p>
+			<p>
+				Программа, написанная мной для меня, которой я успешно пользуюсь и даже делюсь ею с другими гитаристами. Пользуются они ей или нет я правда не знаю, но мне это и не важно.
+			</p>
+			<p>
+				<b>Косяки:</b>
+				<br>
+				<input type="checkbox"> Сделать генератор боя по правилам или убрать его нахер 
+			</p>
+		</div>
+	</button>
+
+	<!-- -------------------------------------------- -->
+	
+	<div class="container">
+
+		<div class="accords">
+			
+
+			
+
+			<div class="accordChoice">
+				
+				<div class="simpleAccords"><h2>Обычные аккорды</h2>
+					<br>
+					<div><input type="checkbox" class="accord simp" name="A">A</div>
+					<div><input type="checkbox" class="accord simp" name="Am">Am</div>
+					<div><input type="checkbox" class="accord simp" name="A7">A7</div>
+					<div><input type="checkbox" class="accord simp" name="E">E</div>
+					<div><input type="checkbox" class="accord simp" name="Em">Em</div>
+					<div><input type="checkbox" class="accord simp" name="D">D</div>
+					<div><input type="checkbox" class="accord simp" name="Dm">Dm</div>
+					<div><input type="checkbox" class="accord simp" name="C">C</div>
+					<div><input type="checkbox" class="accord simp" name="G">G</div>
+					<div><input type="checkbox" class="accord simp" name="B7">B7</div>
+					
+					<div><input type="button" value="выбрать все" class="btnmini" id="simpbtn"></div>
+				</div>
+				<br>
+				<div class="simpleAccords"><h2>Аккорды с баррэ</h2>
+					<br>
+					<div><input type="checkbox" class="accord barr" name="|F">|F</div>
+					<div><input type="checkbox" class="accord barr" name="|G">|G</div>
+					<div><input type="checkbox" class="accord barr" name="|A">|A</div>
+					<div><input type="checkbox" class="accord barr" name="|B">|B</div>
+					<div><input type="checkbox" class="accord barr" name="|C">|C</div>
+					<div><input type="checkbox" class="accord barr" name="|D">|D</div>
+					
+					<div><input type="button" value="выбрать все" class="btnmini" id='barrbtn'></div>
+					<br>
+					<div><input type="checkbox" id="minor">Миноры</div>
+					<div><input type="checkbox" id="dz">Диезы</div>
+					<div><input type="checkbox" id='bem'>Бемоли</div>
+					<div><input type="checkbox" id='sept'>Септаккорды</div>
+				</div>
+				<br>
+				<div class="simpleAccords"><h2>Свой вариант</h2>
+					<br>
+					<input type="text" id="ownAccords">
+				</div>
+
+				<div>
+					<input type="button" value="Составить список" class="btnmini" id="addAccords">
+				</div>
+
+			</div>
+
+
+			<div class="accordList">
+
+				
+				<h2>Список аккордов:</h2>
+				<br>
+				<div class="generateContainer">
+					<input type="text" class="inpmax" placeholder="Всего квадратов" id='squareCount' value='4'>	
+					<input type="button" value="Сгенерировать" class="btnmax" id="randomChain">	
+					<br>
+					<input type="checkbox" id="checkRepeatBtn"><span>Повторять аккорды</span>
+				</div>
+
+				<div class="accordContainer">
+
+					<div id="accordElements">
+						
+					</div>
+				
+
+				
+
+					
+
+				</div>
+
+
+
+			</div>
+
+			<div class="randomChainList">
+				<h2>Случайная последовательность:</h2>
+				<table id="randomChainTable">
+					
+					
+				</table>
+			</div>
+
+			<div class="addition">
+				<div class="randomFight">
+					<h2>Рандомный бой:</h2>
+					<select value="Размерность" id="randomFightCount">
+						<option>4</option>
+						<option>8</option>
+						<option>16</option>
+					</select>
+
+					<input type="button" value="Сгенерировать" id="generateRandomFightBtn">
+
+
+					<table>
+						<tr id="randomFightTableElem">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+
+				<br>
+
+				<div class="randomOrder">
+					<h2>Последовательность:</h2>
+					<select id="fredsStart">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+					<select id="fredsFinish">
+						<option>3</option>
+						<option selected>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+					</select>
+
+					<input type="button" id="generateRandOrderBtn" value="сгенерировать">
+					<div id="randOrder">
+						
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+
+
+
+
+
+
+	</div>
+	
+		
+
+
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="jscode/accords.js"></script>
+
+	
+
+
+
+
+</body>
+</html>
